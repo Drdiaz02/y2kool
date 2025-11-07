@@ -1,0 +1,44 @@
+#intro-overlay {
+  position: fixed; /* cover viewport */
+  inset: 0; /* Cover the entire viewport */
+  background-color: black;
+  z-index: 9999; /* Ensure it's on top of all other content, might change later... */
+  opacity: 1; /* Start fully opaque */
+  transition: opacity 3s ease; /* fade-out transition */
+}
+
+body {
+  background: radial-gradient(circle at center, #001010 0%, #000000 100%);
+  color: #00ffcc;
+  font-family: 'Courier New', monospace;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2 {
+  text-shadow: 0 0 6px #00ffff, 0 0 20px #009999;
+}
+
+a {
+  color: #ff00cc;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  text-shadow: 0 0 5px #ff00ff;
+}
+
+.gamecube {
+  /* border: 2px solid #a59ef5; */
+  /* padding: 20px;
+  margin: 20px 0;
+  border-radius: 8px; */
+  /* box-shadow: 0 0 10px #a59ef5; */
+  background-color: #000000;
+  background-image: url("gamecube-boot.webp");
+}
+
+/* .gamecube-page {
+
+} */
