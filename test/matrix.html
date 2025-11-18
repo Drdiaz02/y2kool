@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="matrix_style.css">
+        <title>Y2Kool</title>
+    </head>
+        <body>
+            <!--Overlay-->
+            <div id="Intro" class="Overlay">
+                <div class="terminal">
+                    <pre id="matrix-text"></pre>
+                    <p class="welcome-message">press enter</p>
+                        <button id="enter-button">Enter</button>
+                </div>
+            </div>
+            <main>
+                <!--Main-->
+                <h2>Welcome to the main site</h2>
+                <p>All y2k chaos lives here.</p>
+            </main>
+
+            <script>
+                const Overlay = document.getElementById('Intro');
+                const enterBtn = document.getElementById('enter-button');
+                const matrixText = document.getElementById('matrix-text');
+                // add some consts for text animations
+                const typeSpeed = 100;
+                const pauseAfterLine = 800;
+                const nextLineDelay= 200;
+
+                const introLines = [
+                    "booting y2kool.exe...",
+                    "initializing retro systems...",
+                    "establishing connection...",
+                    "decrypting archives...",
+                    "loading nostalgia protocols...",
+                    "",
+                    "welcome to y2kool..."
+                ];
+
+                let lineIndex = 0;
+                let charIndex = 0;
+
+                function typeLine() {
+                    if (lineIndex < introLines.length) {
+                        let currentLine = introLines[lineIndex];
+
+                        // type 1 character
+                        matrixText.textContent += currentLine[charIndex] ?? ""; // types undefined without the ternary
+
+                        charIndex++;
+
+                        
+                    // End of line move to next line
+                    if (charIndex > currentLine.length) {
+
+                        setTimeout(() => {
+                            matrixText.textContent = "";
+                            lineIndex++;
+                            charIndex = 0;
+
+                            setTimeout(typeLine, nextLineDelay);
+
+                        }, pauseAfterLine); // this is where line on screen is controlled
+
+                        } else {
+                            setTimeout(typeLine, typeSpeed); // Delay between characters
+                        }
+                    }
+                }
+
+                // start type effect when overlay loads
+                window.addEventListener('load', typeLine);
+
+                enterBtn.addEventListener('click', () => {
+                    Overlay.classList.add('hidden');
+                });
+            </script>
+        </body>
+</html>
+
+<!--So I have been trying since about 12pm to try and get an overlay like a terminal from the matrix to work for the 
+introduction of my homepage. I have broken it out into a test file to get it to work correctly by itself and then I will 
+move it over to the main website to attempt to incorporate it.
+
+Okay, I have a typing effect going but I am having trouble with the lay out and the timing.
+I need to figure out how to get the text to slow down  bit and remain on the page long enough to read
+the text as thought the computer is loading each piece of information as opposed to just typing something
+really fast for the user. I have gotten it to remove the line of text and replace it with a new "command"
+but I need to figure out a way to get it to slow down.
+
+Slowing down the text is just a matter of defining the function within the typeline function. I can set a timeout after each event to
+define the behavior I wish to take place. This was a challenging bit but its nice to see how much control I can take.-->
