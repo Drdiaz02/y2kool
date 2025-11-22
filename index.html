@@ -7,7 +7,17 @@
     <link rel="stylesheet" href="style.css">
 </head>
     <body>
-        <div id="intro-overlay" class="intro-overlay"></div>
+        <div id="intro-overlay">
+            <div class="terminal">
+                <pre id="matrix-text"></pre>
+
+                <div class="welcome-container">
+                    <p class="welcome-message">press enter</p>
+                    <button id="enter-button" class="enter-button">Enter</button>
+                </div>
+            </div>
+        </div>
+
         <header>
                 <h1>Welcome to Y2Kool</h1>
             <nav>
@@ -35,27 +45,57 @@
             </article>
         </main>
         <script>
+            const overlay = document.getElementById('intro-overlay');
+            const enterBtn = document.getElementById('enter-button');
+            const matrixText = document.getElementById('matrix-text');
 
-            window.addEventListener("load", onPageLoad);
+            const typeSpeed = 100;
+            const pauseAfterLine = 800;
+            const nextLineDelay= 200;
 
-            function onPageLoad() {
-                const overlay = document.getElementById("intro-overlay");
-            
-                // Wait 2 seconds, then start fading out
-                setTimeout(() => startFade(overlay), 2000);
+          const introLines = [
+                "booting y2kool.exe...",
+                "initializing retro systems...",
+                "establishing connection...",
+                "decrypting archives...",
+                "loading nostalgia protocols...",
+                "",
+                "welcome to y2kool..."
+            ];
+
+            let lineIndex = 0;
+            let charIndex = 0;
+
+            function typeLine() {
+                if (lineIndex < introLines.length) {
+                    let currentLine = introLines[lineIndex];
+
+                    matrixText.textContent += currentLine[charIndex] ?? "";
+                    charIndex++;
+
+                    if (charIndex > currentLine.length) {
+                        setTimeout(() => {
+                            matrixText.textContent = "";
+                            lineIndex++;
+                            charIndex = 0;
+
+                            setTimeout(typeLine, nextLineDelay);
+
+                        }, pauseAfterLine);
+
+                    } else {
+
+                        setTimeout(typeLine, typeSpeed);
+                    }
+                }
             }
 
-            function startFade(overlay) {
-                overlay.style.opacity = "0";
+            window.addEventListener("load", typeLine);
 
-                // After 1 second, hide overlay
-                setTimeout(() => hideOverlay(overlay), 1000);
-            }
-
-            function hideOverlay(overlay) {
-                overlay.style.display = "none";
-            }
-
+            // enter button needs fade...
+            enterBtn.addEventListener('click', () => {
+                overlay.classList.add("hidden");
+            });
         </script>
     </body>
 </html>

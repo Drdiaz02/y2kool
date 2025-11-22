@@ -2,12 +2,49 @@
   position: fixed; /* cover viewport */
   inset: 0; /* Cover the entire viewport */
   background-color: black;
+  color: rgb(93, 207, 12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   z-index: 9999; /* Ensure it's on top of all other content, might change later... */
-  opacity: 1; /* Start fully opaque */
-  transition: opacity 3s ease; /* fade-out transition */
+}
+
+.terminal {
+    text-align: left;
+    width: 80%;
+}
+
+#matrix-text {
+    position: fixed;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1rem;
+    white-space: pre-wrap;
+    line-height: 1.4;
+    margin-bottom: 2rem;
+}
+
+.welcome-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+button {
+    background-color: black;
+    color: rgb(93, 207, 12);
+}
+
+main {
+  align-self: center;
+  max-width: 80%;
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background: radial-gradient(circle at center, #001010 0%, #000000 100%);
   color: #00ffcc;
   font-family: 'Courier New', monospace;
@@ -16,6 +53,8 @@ body {
 }
 
 h1, h2 {
+  display: flex;
+  justify-content: center;
   text-shadow: 0 0 6px #00ffff, 0 0 20px #009999;
 }
 
@@ -30,15 +69,25 @@ a:hover {
 }
 
 .gamecube {
-  /* border: 2px solid #a59ef5; */
-  /* padding: 20px;
-  margin: 20px 0;
-  border-radius: 8px; */
-  /* box-shadow: 0 0 10px #a59ef5; */
   background-color: #000000;
   background-image: url("gamecube-boot.webp");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 /* .gamecube-page {
 
 } */
+
+/*class gets added when you press Enter */
+#intro-overlay.hidden {
+  animation: fadeOut 1s forwards;
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
