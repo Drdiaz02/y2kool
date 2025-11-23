@@ -24,6 +24,8 @@
 }
 
 .welcome-container {
+  opacity: 0;
+    visibility: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -58,6 +60,10 @@ h1, h2 {
   text-shadow: 0 0 6px #00ffff, 0 0 20px #009999;
 }
 
+strong {
+  padding-left: 1rem;
+}
+
 a {
   color: #ff00cc;
   text-decoration: none;
@@ -85,9 +91,24 @@ a:hover {
   animation: fadeOut 1s forwards;
 }
 
+.welcome-container.visible{
+  animation: fadeIn 3s forwards;
+}
+
 @keyframes fadeOut {
     to {
         opacity: 0;
         visibility: hidden;
     }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    visibility: hidden;
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+  }
 }

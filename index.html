@@ -33,7 +33,7 @@
                     <p>A nostalgic space for Y2K fashion and culture.</p>
                 </section>
                 <section>
-                    <h2>The early 2000's weren't just about consoles! It was a <strong>VIBE</strong></strong></h2>
+                    <h2>The early 2000's weren't just about consoles! It was a <strong>vibe</strong></h2>
                     <ul>
                         <li>Baggy Jeans and studded belts</li>
                         <li>Frosted tips and flip phones</li>
@@ -48,6 +48,7 @@
             const overlay = document.getElementById('intro-overlay');
             const enterBtn = document.getElementById('enter-button');
             const matrixText = document.getElementById('matrix-text');
+            const welcome = document.querySelector('.welcome-container');
 
             const typeSpeed = 100;
             const pauseAfterLine = 800;
@@ -67,6 +68,10 @@
             let charIndex = 0;
 
             function typeLine() {
+                if (lineIndex >= introLines.length) {
+                    console.log("End of list");
+                    welcome.classList.add("visible");
+                }
                 if (lineIndex < introLines.length) {
                     let currentLine = introLines[lineIndex];
 
