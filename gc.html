@@ -12,8 +12,8 @@
                 <pre id="matrix-text"></pre>
 
                 <div class="welcome-container">
-                    <p class="welcome-message">press enter</p>
-                    <button id="enter-button" class="enter-button">Enter</button>
+                    <p class="welcome-message">power on your GameCube</p>
+                    <button id="enter-button" class="enter-button">power</button>
                 </div>
             </div>
         </div>
@@ -76,10 +76,10 @@
             const nextLineDelay= 200;
 
             const introLines = [
-                "loading emotional_nostalgic_damage.exe...",
-                "purple cube acquired...",
-                "detangling wires... ugh",
-                "waiting for start command..."
+                // "loading emotional_nostalgic_damage.exe...",
+                // "purple cube acquired...",
+                // "detangling wires... ugh",
+                "waiting for power..."
             ];
 
             let lineIndex = 0;
@@ -129,10 +129,7 @@
                 vWrapper.style.display = "none"; // hide the wrapper
                 document.getElementById("content-area").classList.add("fade-in");
             });
-
-            // window.addEventListener("load", () => {
-            //     gcBody.style.backgoundmage = "url('gamecube-boot.webp')"
-            // })
+            
         </script>
     </body>
 </html>

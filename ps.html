@@ -12,8 +12,8 @@
                 <pre id="matrix-text"></pre>
 
                 <div class="welcome-container">
-                    <p class="welcome-message">press enter</p>
-                    <button id="enter-button" class="enter-button">Enter</button>
+                    <p class="welcome-message">press power</p>
+                    <button id="enter-button" class="enter-button">power on</button>
                 </div>
             </div>
         </div>
@@ -64,10 +64,12 @@
             const nextLineDelay= 200;
 
             const introLines = [
+                // "booting up PS2 systems...",
                 // "loading emotional_nostalgic_damage.exe...",
-                // "purple cube acquired...",
-                // "detangling wires... ugh",
-                "waiting for start command..."
+                // "sony playstation 2 acquired...",
+                // "detangling more wires...",
+                // "feel free to help out... or dont... -_-",
+                "waiting for power command..."
             ];
 
             let lineIndex = 0;
@@ -109,6 +111,7 @@
                 overlay.classList.add("hidden");
                 vWrapper.style.display = "flex"; // display video wrapper
                 video.style.display = "block"; // display video
+                vWrapper.style.backgroundColor = "rgb(25, 24, 24)";
                 video.play();
             });
 

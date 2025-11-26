@@ -57,6 +57,13 @@ button {
     object-fit: cover;
 }
 
+.ps2-boot {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+}
+
  /* attempt to make a class for content area fading in */
 #content-area {
   opacity: 0;
@@ -114,9 +121,6 @@ body.ps2 {
   background-position: center;
 }
 
-/* .gamecube-page {
-
-} */
 
 /*class gets added when you press Enter */
 #intro-overlay.hidden {
