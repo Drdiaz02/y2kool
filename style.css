@@ -54,7 +54,7 @@ button {
     display: none;
     width: 80vw; /* vw is responsive width */
     height: 80vh; /* responsive height */
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .ps2-boot {
