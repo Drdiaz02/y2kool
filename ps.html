@@ -2,7 +2,7 @@
 <html lang= "en">
     <head>
         <meta charset="UTF-8">
-        <meta name = "viewport" content = "width=device-width, intital-scale=1.0">
+        <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
         <title>PS2 - Y2Kool</title>
         <link rel="stylesheet" href="style.css">
     </head>
@@ -64,11 +64,11 @@
             const nextLineDelay= 200;
 
             const introLines = [
-                // "booting up PS2 systems...",
-                // "loading emotional_nostalgic_damage.exe...",
-                // "sony playstation 2 acquired...",
-                // "detangling more wires...",
-                // "feel free to help out... or dont... -_-",
+                "booting up PS2 systems...",
+                "loading emotional_nostalgic_damage.exe...",
+                "sony playstation 2 acquired...",
+                "detangling more wires...",
+                "feel free to help out... or dont... -_-",
                 "waiting for power command..."
             ];
 
@@ -77,7 +77,6 @@
             
             function typeLine() {
                 if (lineIndex >= introLines.length) {
-                    console.log("End of list");
                     welcome.classList.add("visible");
                 }
                 if (lineIndex < introLines.length) {
@@ -109,15 +108,15 @@
             //updating to play ps video on this page
             enterBtn.addEventListener('click', () => {
                 overlay.classList.add("hidden");
+                video.classList.add("fade-in");
                 vWrapper.style.display = "flex"; // display video wrapper
                 video.style.display = "block"; // display video
-                vWrapper.style.backgroundColor = "rgb(25, 24, 24)";
                 video.play();
             });
 
             // event listener for video to hide after its done playing
             video.addEventListener('ended', () => {
-                vWrapper.style.display = "none"; // hide the wrapper
+                vWrapper.classList.add("hidden"); // hide the wrapper
                 document.getElementById("content-area").classList.add("fade-in");
             });        
         </script>

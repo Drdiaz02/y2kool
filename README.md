@@ -69,13 +69,13 @@ Y2Kool isn’t just about remembering old consoles — it’s about remembering 
 
 # Build phase
 
-# Develepor Notes
+# Developer Notes
 
 - Day 1
     As I build out the site things are coming back to me that I remember about the times. Like the culture; baggy jeans and studded belts, frosted tips and flip phones, pop-punk playlists and Myspace, pixel hearts, glitter text, alt cursors and absolute chaos!
 
 - Day 2-5
-    I built some quick place holders for some of my pages and became blinded by the ambition of making my webpage come to life. There are so many ideas I have swimming in my head that I want to be able to make possible, but the problem with coding is that you must always focus on a single problem and sove it. So for the past few sessions beyond building simple placeholders and implementing an awesome styling choice for the page, I have been attempting to make an overlay that presents itself to the user on the initial visit to the site (the loading of a site) that will be specific to each page! The home page is a welcome overlay, and each console page will have its respective boot sequence to welcome the user. This will be the next goal I tackle as I move forward since I feel filling the page up and styling is much easier than defining specific behavior.
+    I built some quick place holders for some of my pages and became blinded by the ambition of making my webpage come to life. There are so many ideas I have swimming in my head that I want to be able to make possible, but the problem with coding is that you must always focus on a single problem and solve it. So for the past few sessions beyond building simple placeholders and implementing an awesome styling choice for the page, I have been attempting to make an overlay that presents itself to the user on the initial visit to the site (the loading of a site) that will be specific to each page! The home page is a welcome overlay, and each console page will have its respective boot sequence to welcome the user. This will be the next goal I tackle as I move forward since I feel filling the page up and styling is much easier than defining specific behavior.
     - Today in class we went over some cool topics for javascript, functions! Functions are familiar but we went over some pretty interesting ways of manipulating functions to work for us. I went from trying to set an overlay as a static object that would disappear on its own, which did not go over well. However, working with 'events' really helped me understand how I can manipulate the page to perform certain actions during certain moments.
     - The style sheet took a while to make while exploring different options. I have more I want to do with it but I am also trying to take it slow to make sure everything works and looks correct so that I can focus on scaling instead of debugging. The gamecube page has a logo of the gamecube on the back which I will do for the other console pages. I was able to fix a small issue where the picture didnt cover the entire page and left a bar of white at the bottom with a simple background color = black to cover the rest of the page.
 
@@ -84,3 +84,16 @@ Y2Kool isn’t just about remembering old consoles — it’s about remembering 
         I was finally able to merge the behavior of the matrix terminal intro and the fade in event. I found a css rule that will help me with the fade in instead of using javascript to handle it for me. Where I had some javascript trying to handle it (which took a few functions and some timing) css was able to handle with a single block of code and a few lines @keyframes made my life way easier with this task.
 
     I am working on trying to get the page to behave correctly again. It does some key things like terminal typing and fading but its not dialed in yet.
+
+- Last few days
+    Over the last few days, I focused mainly on getting the page behavior to work the way I imagined. I was able to get almost everything working, aside from a few small polish items I wish I had more time for. I didn’t get as much written content onto the website as I originally planned, but I’m really happy with how interactive the site became.
+
+    I started with a single fade effect on the home page and ended up building a whole terminal-style typing effect on its own page just to learn how to make it work. Once I figured that out, I moved everything over to the GameCube and PlayStation pages and started customizing their backgrounds and transitions.
+
+    The GameCube boot video worked well because it fades to black, so the transition from the terminal was easy. The PlayStation video, however, has a gray background, so I had to change how that video was displayed. Getting the PS2 version to behave the way I wanted turned out to be a lot more challenging.
+
+- Future improvements
+    - Terminal text plays every time you visit the page.
+    - More content for each page
+    - random scan line effect
+    - easter eggs

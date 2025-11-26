@@ -21,16 +21,21 @@ body {
 .terminal {
     text-align: left;
     width: 80%;
-    max-width: 600;
 }
 
 #matrix-text {
+    position: fixed;
     font-family: 'Courier New', Courier, monospace;
     font-size: 1rem;
     white-space: pre-wrap;
     line-height: 1.4;
     margin-bottom: 2rem;
 }
+button {
+    background-color: black;
+    color: rgb(93, 207, 12);
+}
+
 .Overlay-content {
     text-align: center;
     padding: 2rem;
@@ -39,6 +44,14 @@ body {
 .Overlay.hidden {
     animation: fadeOut 1s forwards;
     /* display: none; */
+}
+
+.welcome-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 30px;
 }
 
 @keyframes fadeOut {

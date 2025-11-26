@@ -16,7 +16,7 @@
 }
 
 #matrix-text {
-    position: fixed;
+    position: relative;
     font-family: 'Courier New', Courier, monospace;
     font-size: 1rem;
     white-space: pre-wrap;
@@ -124,11 +124,16 @@ body.ps2 {
 
 /*class gets added when you press Enter */
 #intro-overlay.hidden {
-  animation: fadeOut 1s forwards;
+  animation: fadeOut 2s forwards;
 }
+
 
 .gc-boot.hidden {
   animation: fadeOut 1s forwards;
+}
+
+.video-wrapper.hidden {
+  animation: fadeOut 2s forwards;
 }
 
 .welcome-container.visible{
@@ -138,7 +143,7 @@ body.ps2 {
 /* make a fade in class instead */
 .fade-in {
   opacity: 0;
-  animation: fadeIn 3s forwards;
+  animation: fadeIn 2s forwards;
 }
 
 @keyframes fadeOut {
