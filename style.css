@@ -51,6 +51,7 @@ button {
 }
 
 .gc-boot {
+  position: absolute;
     display: none;
     width: 80vw; /* vw is responsive width */
     height: 80vh; /* responsive height */
