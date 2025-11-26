@@ -6,7 +6,22 @@
     <title>GameCube - Y2Kool</title>
     <link rel="stylesheet" href="style.css">
 </head>
-    <body class="gamecube">
+<body class="gamecube">
+        <div id="intro-overlay">
+            <div class="terminal">
+                <pre id="matrix-text"></pre>
+
+                <div class="welcome-container">
+                    <p class="welcome-message">press enter</p>
+                    <button id="enter-button" class="enter-button">Enter</button>
+                </div>
+            </div>
+        </div>
+        <div class="video-wrapper">
+            <video id="gc-boot" class="gc-boot" src="Gc_Boot.mp4"></video>
+         </div>
+
+        <!-- <div id="page-content"> -->
         <header>
             <h1>GameCube - Y2Kool</h1>
             <nav>
@@ -15,11 +30,11 @@
                 <a href="ps.html" title="PlayStation Page"> PlayStation</a>
             </nav>
         </header>
-        <main>
+        <main id="content-area">
             <section>
                     <h2>Nintendo GameCube</h2>
-                <p>The Nintendo GameCube, released in 2001, was a compact and innovative console that brought unique gaming experiences to the early 2000s.
-                    Known for its distinctive cube shape and handle, it was designed for portability and ease of use.</p>
+                        <p>The Nintendo GameCube, released in 2001, was a compact and innovative console that brought unique gaming experiences to the early 2000s.
+                        Known for its distinctive cube shape and handle, it was designed for portability and ease of use.</p>
             </section>
             <article>
                 <section>
@@ -43,5 +58,81 @@
                 </section>
             </article>
         </main>
+
+        <script>
+            const gcBody = document.querySelector(".gamecube");
+
+            const overlay = document.getElementById('intro-overlay');
+            const enterBtn = document.getElementById('enter-button');
+            const matrixText = document.getElementById('matrix-text');
+            const welcome = document.querySelector('.welcome-container');
+
+            // need variable for gc boot sequence
+            const vWrapper = document.querySelector('.video-wrapper')
+            const video = document.getElementById('gc-boot');
+
+            const typeSpeed = 100;
+            const pauseAfterLine = 800;
+            const nextLineDelay= 200;
+
+            const introLines = [
+                "loading emotional_nostalgic_damage.exe...",
+                "purple cube acquired...",
+                "detangling wires... ugh",
+                "waiting for start command..."
+            ];
+
+            let lineIndex = 0;
+            let charIndex = 0;
+            
+            function typeLine() {
+                if (lineIndex >= introLines.length) {
+                    console.log("End of list");
+                    welcome.classList.add("visible");
+                }
+                if (lineIndex < introLines.length) {
+                    let currentLine = introLines[lineIndex];
+
+                    matrixText.textContent += currentLine[charIndex] ?? "";
+                    charIndex++;
+
+                    if (charIndex > currentLine.length) {
+                        setTimeout(() => {
+                            matrixText.textContent = "";
+                            lineIndex++;
+                            charIndex = 0;
+
+                            setTimeout(typeLine, nextLineDelay);
+
+                        }, pauseAfterLine);
+
+                    } else {
+
+                        setTimeout(typeLine, typeSpeed);
+                    }
+                }
+            }
+
+            window.addEventListener("load", typeLine);
+
+            // enter button needs fade...
+            //updating to play gc video on this page
+            enterBtn.addEventListener('click', () => {
+                overlay.classList.add("hidden");
+                vWrapper.style.display = "flex"; // display video wrapper
+                video.style.display = "block"; // display video
+                video.play();
+            });
+
+            // event listener for video to hide after its done playing
+            video.addEventListener('ended', () => {
+                vWrapper.style.display = "none"; // hide the wrapper
+                document.getElementById("content-area").classList.add("fade-in");
+            });
+
+            // window.addEventListener("load", () => {
+            //     gcBody.style.backgoundmage = "url('gamecube-boot.webp')"
+            // })
+        </script>
     </body>
 </html>

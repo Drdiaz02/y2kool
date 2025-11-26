@@ -79,5 +79,8 @@ Y2Kool isn’t just about remembering old consoles — it’s about remembering 
     - Today in class we went over some cool topics for javascript, functions! Functions are familiar but we went over some pretty interesting ways of manipulating functions to work for us. I went from trying to set an overlay as a static object that would disappear on its own, which did not go over well. However, working with 'events' really helped me understand how I can manipulate the page to perform certain actions during certain moments.
     - The style sheet took a while to make while exploring different options. I have more I want to do with it but I am also trying to take it slow to make sure everything works and looks correct so that I can focus on scaling instead of debugging. The gamecube page has a logo of the gamecube on the back which I will do for the other console pages. I was able to fix a small issue where the picture didnt cover the entire page and left a bar of white at the bottom with a simple background color = black to cover the rest of the page.
 
-- Day ~6
+- Day ~6-9
     I have broken out some logic in a test file to try and get some more behavior that I can use on my page. The documentation can be found on "matrix.html" I will move that documentation here after I get it working on the main page.
+        I was finally able to merge the behavior of the matrix terminal intro and the fade in event. I found a css rule that will help me with the fade in instead of using javascript to handle it for me. Where I had some javascript trying to handle it (which took a few functions and some timing) css was able to handle with a single block of code and a few lines @keyframes made my life way easier with this task.
+
+    I am working on trying to get the page to behave correctly again. It does some key things like terminal typing and fading but its not dialed in yet.
